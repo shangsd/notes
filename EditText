@@ -1,0 +1,27 @@
+
+/**
+ * EditText 失去焦点隐藏输入法
+ */
+public boolean dispatchTouchEvent(MotionEvent event) {
+        View v = getCurrentFocus();
+        boolean ret = super.dispatchTouchEvent(event);
+
+        if (v instanceof EditText) {
+            View currentFocus = getCurrentFocus();
+            int screenCoords[] = new int[2];
+            currentFocus.getLocationOnScreen(screenCoords);
+            float x = event.getRawX() + currentFocus.getLeft() - screenCoords[0];
+            float y = event.getRawY() + currentFocus.getTop() - screenCoords[1];
+
+            if (event.getAction() == MotionEvent.ACTION_UP
+                    && (x < currentFocus.getLeft() ||
+                        x >= currentFocus.getRight() ||
+                        y < currentFocus.getTop() ||
+                        y > currentFocus.getBottom())) {
+                InputMethodManager imm =
+                    (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getWindow().getCurrentFocus().getWindowToken(), 0);
+            }
+        }
+        return ret;
+    }
