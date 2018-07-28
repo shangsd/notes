@@ -1,0 +1,111 @@
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="22dp">
+
+
+        <ImageView
+            android:id="@+id/decoration_company_avatar"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:background="@drawable/case_nick_bg"
+            android:padding="0.5dp" />
+
+
+        <TableLayout
+            android:id="@+id/decoration_company_head_flag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="60dp"
+            android:layout_toRightOf="@+id/decoration_company_avatar"
+            android:shrinkColumns="0"
+            android:stretchColumns="1|2">
+
+
+            <TableRow android:gravity="center_vertical">
+
+
+                <com.to8to.steward.custom.TCustomPingFangRegularTextView
+                    android:id="@+id/decoration_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="#444444"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_weight="1"
+                    tools:text="标题标题标题标题标题标题" />
+
+
+                <ImageView
+                    android:id="@+id/decoration_company_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:layout_toRightOf="@+id/decoration_company_name"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    tools:src="@drawable/company_1"
+                    tools:visibility="visible" />
+
+                <com.to8to.steward.custom.TCustomPingFangRegularTextView
+                    android:id="@+id/decoration_company_new_flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/strategy_recommend_bg"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="跟随"
+                    android:textColor="#444444"
+                    android:textSize="9dp"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/decoration_company_ticket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    tools:src="@drawable/nc_icon_ticket"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/decoration_company_promotion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="center"
+                    android:visibility="gone"
+                    tools:src="@drawable/nc_icon_activity"
+                    tools:visibility="visible" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
+        <com.to8to.steward.custom.TCustomPingFangRegularTextView
+            android:id="@+id/decoration_company_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:gravity="right"
+            android:text="1111.2km"
+            android:textColor="#FF8E8E93"
+            android:textSize="11sp" />
+    </RelativeLayout>
